@@ -4,6 +4,7 @@
 
 **Escape from Duckov**에서 지나간 자리에 발자국이 남습니다. 일정 거리마다 찍는 방식이 아니라, 발이 실제로 바닥에 닿는 순간에 지금 신고 있는 그 발 모양으로 찍힙니다.
 
+[![Steam Workshop](https://img.shields.io/badge/Steam%20Workshop-Duck%20Tracks-1b2838)](https://steamcommunity.com/sharedfiles/filedetails/?id=3786388428)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ![썸네일](docs/thumb.png)

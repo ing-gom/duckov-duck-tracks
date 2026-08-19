@@ -4,6 +4,7 @@
 
 Footprints that stay where you walked, in **Escape from Duckov**. Not spaced by distance — stamped at the moment a foot actually lands, in the shape of the foot your character is actually wearing.
 
+[![Steam Workshop](https://img.shields.io/badge/Steam%20Workshop-Duck%20Tracks-1b2838)](https://steamcommunity.com/sharedfiles/filedetails/?id=3786388428)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ![thumbnail](docs/thumb.png)

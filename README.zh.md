@@ -4,6 +4,7 @@
 
 在 **Escape from Duckov** 中，走过的地方会留下脚印。不是按固定距离铺设，而是在脚真正着地的瞬间压印，形状取自角色当前穿着的那只脚。
 
+[![Steam Workshop](https://img.shields.io/badge/Steam%20Workshop-Duck%20Tracks-1b2838)](https://steamcommunity.com/sharedfiles/filedetails/?id=3786388428)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 ![缩略图](docs/thumb.png)
