@@ -1,6 +1,6 @@
 ducktracks_menu_open_button,Footprint Settings
 ducktracks_window_title,Footprint Settings
-ducktracks_window_close,Close
+ducktracks_window_close,Close window
 ducktracks_window_reset,Reset this tab
 ducktracks_toggle_master_on,Footprints on
 ducktracks_toggle_master_off,Footprints off
@@ -30,7 +30,7 @@ ducktracks_editor_open,Draw a shape
 ducktracks_editor_title,Draw a shape — paint the cells
 ducktracks_editor_name,Name
 ducktracks_editor_save,Save and use
-ducktracks_editor_clear,Clear
+ducktracks_editor_clear,Clear all
 ducktracks_editor_invert,Invert
 ducktracks_editor_delete,Delete shape
 ducktracks_size_forever,Keep forever (never fades)

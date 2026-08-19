@@ -10,9 +10,9 @@ namespace DuckTracks;
 /// <c>L.Window.Title</c>처럼 <c>L</c>을 통해 읽고, 문자열 리터럴을 직접 쓰지 않습니다.
 /// 키를 추가하면 assets/Locales의 ko/en/zh/zh-hant CSV 네 곳에 모두 넣어야 합니다.
 ///
-/// <b>키에 모드 이름을 붙입니다.</b> <c>window_close</c> 같은 흔한 이름은 게임 자체나
-/// 다른 모드가 이미 쓰고 있어서, 그대로 두면 우리 값이 아니라 그쪽 값이 나옵니다
-/// (설정 창의 "창 닫기"가 게임의 "닫기"로 나오던 것이 그 경우입니다).
+/// 키에 모드 이름을 붙여 둡니다. SDK의 LocalizationService는 어셈블리 폴더의
+/// Locales만 읽으므로 모드끼리 충돌할 일은 없지만, 로그나 저장 파일에서 어느 모드의
+/// 키인지 바로 보이는 편이 낫습니다.
 /// </summary>
 [LanguageSupport("zh", "en", "ko", "zh-hant")]
 public static class LK
