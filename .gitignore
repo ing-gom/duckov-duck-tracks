@@ -1,0 +1,32 @@
+# Build results
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Release folder (배포용 파일은 제외하지 않음)
+# release/ 폴더는 Git에 포함
+
+# Local configuration (개인 설정 파일)
+Local.props
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+
+
+AC Little Enchant Mesh VFX/*

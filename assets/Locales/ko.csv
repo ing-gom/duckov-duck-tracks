@@ -1,0 +1,63 @@
+ducktracks_menu_open_button,발자국 설정
+ducktracks_window_title,발자국 설정
+ducktracks_window_close,창 닫기
+ducktracks_window_reset,이 탭을 기본값으로
+ducktracks_toggle_master_on,발자국 켜기
+ducktracks_toggle_master_off,발자국 끄기
+ducktracks_shape_section,모양
+ducktracks_shape_source_actual,실제 발 모양
+ducktracks_shape_source_builtin,내장 물갈퀴
+ducktracks_shape_source_texture,그림 파일
+ducktracks_shape_actual_hint,지금 신고 있는 발을 그대로 찍습니다. 신발을 바꾸면 자국도 바뀝니다.
+ducktracks_shape_picker,그림 고르기
+ducktracks_shape_refresh,폴더 다시 읽기
+ducktracks_shape_no_textures,폴더에 그림이 없습니다
+ducktracks_shape_folder_hint,PNG를 넣을 곳: {0}
+ducktracks_shape_preview,미리보기
+ducktracks_colour_section,색
+ducktracks_colour_fresh,찍힌 직후
+ducktracks_colour_fade,사라질 때
+ducktracks_colour_alpha,진하기
+ducktracks_colour_blend_alpha,합성: 덮어쓰기
+ducktracks_colour_blend_additive,야광 (어두운 곳에서 빛남)
+ducktracks_colour_blend_hint,야광은 밝은 색에서만 보입니다. 어두운 색은 덮어쓰기를 쓰세요.
+ducktracks_colour_hex,색 코드
+ducktracks_size_section,크기와 간격
+ducktracks_size_auto_scale,크기 배수 (1 = 실제 발과 같음)
+ducktracks_size_size,자국 크기
+ducktracks_size_life,지속 시간
+ducktracks_editor_open,모양 만들기
+ducktracks_editor_title,모양 만들기 — 칸을 칠하세요
+ducktracks_editor_name,이름
+ducktracks_editor_save,저장하고 쓰기
+ducktracks_editor_clear,모두 지우기
+ducktracks_editor_invert,반전
+ducktracks_editor_delete,이 도형 삭제
+ducktracks_size_forever,계속 남기기 (사라지지 않음)
+ducktracks_size_forever_hint,사라지지 않고 개수 제한도 없습니다. 지나온 자리가 모두 남습니다.
+ducktracks_editor_random,무작위
+ducktracks_colour_glow_intensity,빛나는 세기
+ducktracks_pulse_section,깜박임
+ducktracks_pulse_enable,깜박이게 하기
+ducktracks_pulse_speed,깜박이는 빠르기
+ducktracks_pulse_depth,어두워지는 정도
+ducktracks_pulse_cycle_hue,색이 계속 바뀌게 하기
+ducktracks_pulse_hue_speed,색이 바뀌는 빠르기
+ducktracks_pulse_grey_hint,지금 색이 회색이라 색을 돌려도 그대로입니다. 색을 먼저 고르세요.
+ducktracks_colour_burst,튀는 알갱이
+ducktracks_burst_section,걸음 알갱이
+ducktracks_burst_enable,디딜 때 알갱이 튀기기
+ducktracks_burst_count,한 걸음당 개수
+ducktracks_burst_size,알갱이 크기
+ducktracks_burst_speed,튀어오르는 세기
+ducktracks_burst_gravity,중력
+ducktracks_burst_life,알갱이 지속
+ducktracks_burst_colour_hint,알갱이 색은 색 항목의 [튀는 알갱이]에서 고릅니다.
+ducktracks_burst_pick_shape,알갱이 모양 고르기
+ducktracks_burst_default_shape,기본 동그라미
+ducktracks_burst_reset_shape,기본으로
+ducktracks_burst_drift,남아 있는 자국에서 알갱이 흘리기
+ducktracks_burst_drift_hint,바닥에 남아 있는 자국에서 알갱이가 천천히 떠오릅니다. 색과 모양은 튀는 알갱이와 같습니다.
+ducktracks_burst_drift_rate,흘리는 양
+ducktracks_burst_drift_scale,흘리는 알갱이 크기
+ducktracks_burst_drift_rise,떠오르는 속도

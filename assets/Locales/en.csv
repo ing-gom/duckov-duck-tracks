@@ -1,0 +1,63 @@
+ducktracks_menu_open_button,Footprint Settings
+ducktracks_window_title,Footprint Settings
+ducktracks_window_close,Close
+ducktracks_window_reset,Reset this tab
+ducktracks_toggle_master_on,Footprints on
+ducktracks_toggle_master_off,Footprints off
+ducktracks_shape_section,Shape
+ducktracks_shape_source_actual,Actual foot
+ducktracks_shape_source_builtin,Built-in webbed
+ducktracks_shape_source_texture,Image file
+ducktracks_shape_actual_hint,Stamps the foot you are wearing. Change footwear and the print changes too.
+ducktracks_shape_picker,Pick an image
+ducktracks_shape_refresh,Rescan folder
+ducktracks_shape_no_textures,No images in the folder
+ducktracks_shape_folder_hint,Drop PNGs here: {0}
+ducktracks_shape_preview,Preview
+ducktracks_colour_section,Colour
+ducktracks_colour_fresh,Freshly stamped
+ducktracks_colour_fade,As it fades
+ducktracks_colour_alpha,Opacity
+ducktracks_colour_blend_alpha,Blend: paint over
+ducktracks_colour_blend_additive,Glow in the dark
+ducktracks_colour_blend_hint,Glow only shows with bright colours. Use paint over for dark ones.
+ducktracks_colour_hex,Hex
+ducktracks_size_section,Size and spacing
+ducktracks_size_auto_scale,Size multiplier (1 = same as the real foot)
+ducktracks_size_size,Print size
+ducktracks_size_life,How long it lasts
+ducktracks_editor_open,Draw a shape
+ducktracks_editor_title,Draw a shape — paint the cells
+ducktracks_editor_name,Name
+ducktracks_editor_save,Save and use
+ducktracks_editor_clear,Clear
+ducktracks_editor_invert,Invert
+ducktracks_editor_delete,Delete shape
+ducktracks_size_forever,Keep forever (never fades)
+ducktracks_size_forever_hint,Prints never fade and there is no cap on how many are kept. Everywhere you walked stays.
+ducktracks_editor_random,Random
+ducktracks_colour_glow_intensity,Glow strength
+ducktracks_pulse_section,Blinking
+ducktracks_pulse_enable,Make prints blink
+ducktracks_pulse_speed,Blink speed
+ducktracks_pulse_depth,How dark it dips
+ducktracks_pulse_cycle_hue,Cycle through colours
+ducktracks_pulse_hue_speed,Colour change speed
+ducktracks_pulse_grey_hint,"The current colour is grey, so cycling does nothing. Pick a colour first."
+ducktracks_colour_burst,Burst particles
+ducktracks_burst_section,Step particles
+ducktracks_burst_enable,Kick up particles on each step
+ducktracks_burst_count,Particles per step
+ducktracks_burst_size,Particle size
+ducktracks_burst_speed,How hard they kick up
+ducktracks_burst_gravity,Gravity
+ducktracks_burst_life,Particle lifetime
+ducktracks_burst_colour_hint,Their colour is under [Burst particles] in the colour section.
+ducktracks_burst_pick_shape,Pick particle shape
+ducktracks_burst_default_shape,Default dot
+ducktracks_burst_reset_shape,Back to dot
+ducktracks_burst_drift,Let prints give off particles
+ducktracks_burst_drift_hint,Particles rise slowly from prints still on the ground. Colour and shape follow the burst particles.
+ducktracks_burst_drift_rate,How much they give off
+ducktracks_burst_drift_scale,Size of drifting ones
+ducktracks_burst_drift_rise,How fast they rise
