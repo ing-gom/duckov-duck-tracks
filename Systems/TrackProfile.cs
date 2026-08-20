@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DuckTracks.Systems
@@ -49,6 +50,7 @@ namespace DuckTracks.Systems
     /// 값만 들고 있습니다 — 파티클을 만들거나 색을 계산하는 일은 하지 않습니다.
     /// 그래야 설정 창이 이 객체를 그대로 편집하고, 저장은 JSON 한 번으로 끝납니다.
     /// </summary>
+    [Serializable]
     public sealed class TrackProfile
     {
         /// <summary>이 종류를 남길지.</summary>

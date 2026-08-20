@@ -19,18 +19,34 @@ namespace DuckTracks.Systems
     {
         private const string FileName = "profiles.json";
 
-        /// <summary>파일에 담기는 모양. 프로필 셋을 한 덩어리로 넣습니다.</summary>
+        /// <summary>
+        /// 저장 형식 판.
+        ///
+        /// 1은 프로필을 <b>중첩 객체</b>로 넣던 판입니다. 그 파일에는 <c>version</c>
+        /// 말고 아무것도 들어 있지 않으므로(아래 참조) 옮겨 올 값이 없습니다.
+        /// </summary>
+        private const int CurrentVersion = 2;
+
+        /// <summary>
+        /// 파일에 담기는 모양.
+        ///
+        /// <b>프로필을 객체가 아니라 문자열로 담습니다.</b> Unity의 <c>JsonUtility</c>는
+        /// 런타임에 올라온 모드 어셈블리의 타입을 <b>중첩 필드로는</b> 직렬화하지 못하고
+        /// 조용히 버립니다. 판 1이 정확히 그 함정에 빠져 있었습니다 — 저장된 파일이
+        /// <c>{ "version": 1 }</c> 스무 바이트였고, 프로필 셋이 통째로 없었습니다.
+        /// 맵을 옮기거나 게임을 다시 켤 때 설정이 초기값으로 돌아가던 원인입니다.
+        ///
+        /// <see cref="ProfileJson"/>이 프로필 하나를 <b>맨 위 객체</b>로 직렬화해
+        /// 문자열로 만들어 줍니다. 문자열은 Unity가 항상 아는 타입이라 안전하게 오갑니다.
+        /// </summary>
         [Serializable]
         private sealed class Payload
         {
-            /// <summary>
-            /// 저장 형식 판. 나중에 항목이 바뀌었을 때 옛 파일을 알아보려고 둡니다.
-            /// </summary>
-            public int version = 1;
+            public int version = CurrentVersion;
 
-            public TrackProfile? foot;
-            public TrackProfile? vehicle;
-            public TrackProfile? mount;
+            public string foot = "";
+            public string vehicle = "";
+            public string mount = "";
         }
 
         /// <summary>
@@ -58,9 +74,15 @@ namespace DuckTracks.Systems
                 if (payload == null)
                     return;
 
-                Apply(payload.foot, Settings.TrackSettings.Foot);
-                Apply(payload.vehicle, Settings.TrackSettings.Vehicle);
-                Apply(payload.mount, Settings.TrackSettings.Mount);
+                int applied = 0;
+                applied += Apply(ProfileJson.OneFrom<TrackProfile>(payload.foot), Settings.TrackSettings.Foot);
+                applied += Apply(ProfileJson.OneFrom<TrackProfile>(payload.vehicle), Settings.TrackSettings.Vehicle);
+                applied += Apply(ProfileJson.OneFrom<TrackProfile>(payload.mount), Settings.TrackSettings.Mount);
+
+                // 성공 로그를 남깁니다. 판 1의 저장 실패가 오래 눈에 띄지 않았던 이유가
+                // 실패해도 조용했기 때문입니다 — 몇 개를 실제로 되살렸는지 찍어 둡니다.
+                UnityEngine.Debug.Log(
+                    $"[DuckTracks] 프로필 {applied}개를 불러왔습니다. (판 {payload.version})");
             }
             catch (Exception ex)
             {
@@ -75,10 +97,11 @@ namespace DuckTracks.Systems
         /// 참조하고 있기 때문입니다. 참조를 바꾸면 창에서 고친 값이 반영되지 않는
         /// 자리가 생깁니다.
         /// </summary>
-        private static void Apply(TrackProfile? from, TrackProfile to)
+        /// <returns>옮겼으면 1, 읽을 것이 없었으면 0.</returns>
+        private static int Apply(TrackProfile? from, TrackProfile to)
         {
             if (from == null)
-                return;
+                return 0;
 
             to.enabled = from.enabled;
             to.kind = from.kind;
@@ -114,6 +137,8 @@ namespace DuckTracks.Systems
             to.driftRise = from.driftRise;
             to.burstColor = from.burstColor;
             to.burstTextureName = from.burstTextureName ?? "";
+
+            return 1;
         }
 
         internal static void Save()
@@ -122,9 +147,9 @@ namespace DuckTracks.Systems
             {
                 var payload = new Payload
                 {
-                    foot = Settings.TrackSettings.Foot,
-                    vehicle = Settings.TrackSettings.Vehicle,
-                    mount = Settings.TrackSettings.Mount,
+                    foot = ProfileJson.One(Settings.TrackSettings.Foot),
+                    vehicle = ProfileJson.One(Settings.TrackSettings.Vehicle),
+                    mount = ProfileJson.One(Settings.TrackSettings.Mount),
                 };
 
                 string path = FilePath();

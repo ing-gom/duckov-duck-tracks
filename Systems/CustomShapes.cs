@@ -54,10 +54,22 @@ namespace DuckTracks.Systems
         /// <summary>한 사람이 관리할 수 있는 정도. 목록을 ◀ ▶로 넘기기 때문에 무한정은 곤란합니다.</summary>
         public const int MaxShapes = 24;
 
+        /// <summary>
+        /// 파일에 담기는 모양.
+        ///
+        /// <b>도형을 객체 배열이 아니라 문자열 배열로 담습니다.</b> Unity의
+        /// <c>JsonUtility</c>는 런타임에 올라온 모드 어셈블리의 타입을 <b>중첩 필드로는</b>
+        /// 직렬화하지 못하고 조용히 버립니다. <c>CustomShape[] shapes</c>가 정확히 그
+        /// 함정이었습니다 — 저장된 파일이 <c>{}</c> 두 글자였고, 직접 그린 도형이
+        /// 판마다 사라지고 있었습니다.
+        ///
+        /// 옛 이름(<c>shapes</c>)을 그대로 두지 않고 <c>items</c>로 바꾼 이유는,
+        /// 어차피 옛 파일에 살아남은 도형이 하나도 없어서 옮겨 올 것이 없기 때문입니다.
+        /// </summary>
         [Serializable]
         private class ShapeSetData
         {
-            public CustomShape[] shapes = Array.Empty<CustomShape>();
+            public string[] items = Array.Empty<string>();
         }
 
         private static List<CustomShape>? _shapes;
@@ -332,10 +344,10 @@ namespace DuckTracks.Systems
                     return;
 
                 var data = JsonUtility.FromJson<ShapeSetData>(File.ReadAllText(path, Encoding.UTF8));
-                if (data == null || data.shapes == null)
+                if (data == null)
                     return;
 
-                foreach (var shape in data.shapes)
+                foreach (var shape in ProfileJson.Unpack<CustomShape>(data.items))
                 {
                     if (shape != null && shape.IsValid)
                         _shapes!.Add(shape);
@@ -353,7 +365,7 @@ namespace DuckTracks.Systems
         {
             try
             {
-                var data = new ShapeSetData { shapes = All.ToArray() };
+                var data = new ShapeSetData { items = ProfileJson.Pack(All.ToArray()) };
                 File.WriteAllText(GetPath(), JsonUtility.ToJson(data, true), Encoding.UTF8);
             }
             catch (Exception ex)
